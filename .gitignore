@@ -1,0 +1,52 @@
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Dependency directories
+vendor/
+
+# GoLand IDE files
+.idea/
+*.iml
+
+# VS Code settings
+.vscode/
+
+# OS-specific files
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Coverage reports
+*.coverprofile
+*.cov
+
+# Build output
+bin/
+build/
+dist/
+
+# Environment files
+.env
+.env.*
