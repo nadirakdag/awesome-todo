@@ -34,7 +34,7 @@ func printTasks(tasks []todo.Task) {
 	fmt.Fprintln(w, "--\t-----------\t------\t---------")
 
 	for _, t := range tasks {
-		fmt.Fprintf(w, "%s\t%s\t%s\t%s\n", t.ID, t.Description, getTaskStatus(t.Status), t.CreatedAt.Local().Format("2006-01-02 15:04:05Z"))
+		fmt.Fprintf(w, "%s\t%s\t%s\t%s\n", t.ID, t.Description, getTaskStatus(t.Status), t.GetTimeDiff())
 	}
 
 	w.Flush()
