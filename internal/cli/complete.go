@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"awesome-todo/internal/todo"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -13,6 +14,15 @@ var completeCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		taskId := args[0]
-		fmt.Printf("%s task completed \n", taskId)
+
+		taskService := todo.NewService()
+
+		task, err := taskService.Complete(taskId)
+		if err != nil {
+			fmt.Printf("Got an error while mark the task as completed, id: %s, err: %v", taskId, err)
+			return
+		}
+
+		printTasks([]todo.Task{task})
 	},
 }

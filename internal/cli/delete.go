@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"awesome-todo/internal/todo"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -13,6 +14,15 @@ var deleteCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		taskId := args[0]
-		fmt.Printf("%s task deleted \n", taskId)
+
+		taskService := todo.NewService()
+
+		task, err := taskService.Delete(taskId)
+		if err != nil {
+			fmt.Printf("Got an error while deleting the task, id: %s, err: %v", taskId, err)
+			return
+		}
+
+		printTasks([]todo.Task{task})
 	},
 }
