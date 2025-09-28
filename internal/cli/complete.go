@@ -13,6 +13,6 @@ var completeCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		taskId := args[0]
-		fmt.Printf("%s taks completed \n", taskId)
+		fmt.Printf("%s task completed \n", taskId)
 	},
 }

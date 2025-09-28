@@ -7,9 +7,9 @@ import (
 )
 
 var createCmd = &cobra.Command{
-	Use:   "create",
-	Short: "Creates a new task",
-	Long:  "Creates a new task with a description to you task list",
+	Use:   "create [description]",
+	Short: "Create a new task",
+	Long:  "Creates a new task with the provided description in your task list",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		description := args[0]
