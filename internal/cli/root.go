@@ -7,7 +7,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "tasks",
 	Short: "Simple Todo App CLI Interface",
-	Long:  "Simple Todo App with CLI, REST and gRPC endponint, this is the CLI interface",
+	Long:  "Simple Todo App with CLI, REST and gRPC endpoint, this is the CLI interface",
 }
 
 func Execute() {
